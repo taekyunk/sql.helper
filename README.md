@@ -46,7 +46,26 @@ Example: `count_from()`
 
 ``` r
 library(tidyverse)
+#> Loading tidyverse: ggplot2
+#> Loading tidyverse: tibble
+#> Loading tidyverse: tidyr
+#> Loading tidyverse: readr
+#> Loading tidyverse: purrr
+#> Loading tidyverse: dplyr
+#> Conflicts with tidy packages ----------------------------------------------
+#> filter(): dplyr, stats
+#> lag():    dplyr, stats
 c("x", "y") %>% 
     count_from("schema.table")
-#> [1] "select x, y , count(*) as n from schema.table group by 1, 2 ;"
+#> [1] "select x, y , count(*) as n from schema.table group by x, y ;"
+```
+
+Example: `count_rows()`
+-----------------------
+
+`count_rows()` builds SQL query to count the number of observations in a table
+
+``` r
+count_rows("schema.table")
+#> [1] "select count(*) as n_row from schema.table ;"
 ```

@@ -59,3 +59,11 @@ library(tidyverse)
 c("x", "y") %>% 
     count_from("schema.table")
 ```
+
+## Example: `count_rows()`
+
+`count_rows()` builds SQL query to count the number of observations in a table
+
+```{r example3}
+count_rows("schema.table")
+```

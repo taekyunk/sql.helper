@@ -86,3 +86,18 @@ count_from <- function(vars, table_name){
         "group by", vars_cat, ";")
     query
 }
+
+
+
+#' Count number of rows in a table
+#'
+#' @param table_name table name
+#'
+#' @return SQL query of counting the number of rows
+#' @export
+#'
+#' @examples
+#' count_rows("schema.table")
+count_rows <- function(table_name){
+    paste("select count(*) as n_row from", table_name, ";")
+}
