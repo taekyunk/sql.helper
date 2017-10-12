@@ -80,10 +80,9 @@ comma_concat <- function(vars){
 #' count_from("table_name")
 count_from <- function(vars, table_name){
     vars_cat <- comma_concat(vars)
-    groups_cat <- comma_concat(seq_along(vars))
     query <- paste(
         "select", vars_cat, ", count(*) as n",
         "from", table_name,
-        "group by", groups_cat, ";")
+        "group by", vars_cat, ";")
     query
 }
