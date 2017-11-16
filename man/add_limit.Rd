@@ -18,6 +18,6 @@ query with added limit
 add limit n in SQL query
 }
 \examples{
-library(tidyverse)
+library(magrittr)
 "select * from schema.table;" \%>\% add_limit(100)
 }

@@ -15,6 +15,3 @@ a character string
 \description{
 Put each element in single quotes
 }
-\examples{
-paren:::single_quote_each(letters[1:5])
-}

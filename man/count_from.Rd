@@ -18,7 +18,7 @@ sql query string
 Count the cases for the combination of variables from the table
 }
 \examples{
-library(tidyverse)
+library(magrittr)
 c("x", "y") \%>\%
 count_from("table_name")
 }

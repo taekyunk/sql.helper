@@ -6,9 +6,6 @@
 #' @param x vector
 #'
 #' @return a character string
-#'
-#' @examples
-#' paren:::add_paren(1:5)
 add_paren <- function(x){
     middle <- paste(x, collapse = ",")
     paste0("(", middle, ")")
@@ -20,9 +17,6 @@ add_paren <- function(x){
 #' @param x vector
 #'
 #' @return a character string
-#'
-#' @examples
-#' paren:::single_quote_each(letters[1:5])
 single_quote_each <- function(x){
     paste0("'", x, "'")
 }
@@ -59,12 +53,10 @@ paren <- function(x){
 #' @param vars character vector
 #'
 #' @return string with comma separated
-#'
-#' @examples
-#' comma_concat(c("x", "y"))
 comma_concat <- function(vars){
     paste(vars, collapse = ", ")
 }
+
 
 #' Count the cases for the combination of variables from the table
 #'
@@ -75,7 +67,7 @@ comma_concat <- function(vars){
 #' @export
 #'
 #' @examples
-#' library(tidyverse)
+#' library(magrittr)
 #' c("x", "y") %>%
 #' count_from("table_name")
 count_from <- function(vars, table_name){
@@ -86,7 +78,6 @@ count_from <- function(vars, table_name){
         "group by", vars_cat, ";")
     query
 }
-
 
 
 #' Count number of rows in a table
@@ -101,6 +92,7 @@ count_from <- function(vars, table_name){
 count_rows <- function(table_name){
     paste("select count(*) as n_row from", table_name, ";")
 }
+
 
 #' Remove semicolon
 #'
@@ -118,10 +110,11 @@ remove_semicolon <- function(x){
 #' @param n number of observations
 #'
 #' @return query with added limit
+#' @importFrom magrittr '%>%'
 #' @export
 #'
 #' @examples
-#' library(tidyverse)
+#' library(magrittr)
 #' "select * from schema.table;" %>% add_limit(100)
 add_limit <- function(query, n = 100){
     query %>%

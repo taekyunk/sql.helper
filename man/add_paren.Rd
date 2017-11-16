@@ -16,6 +16,3 @@ a character string
 Concatenate the elements in x into a string and surround the result by parentheses.
 This does not add single quote to each element
 }
-\examples{
-paren:::add_paren(1:5)
-}

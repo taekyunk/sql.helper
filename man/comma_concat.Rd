@@ -15,6 +15,3 @@ string with comma separated
 \description{
 Concatenate by comma
 }
-\examples{
-comma_concat(c("x", "y"))
-}

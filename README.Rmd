@@ -67,3 +67,11 @@ c("x", "y") %>%
 ```{r example3}
 count_rows("schema.table")
 ```
+
+## Example: `add_limit()`
+
+`add_limit(n)` adds limit condition at the end of the given SQL query
+
+```{r example4}
+"select * from schema.table;" %>% add_limit(100)
+```
