@@ -101,3 +101,30 @@ count_from <- function(vars, table_name){
 count_rows <- function(table_name){
     paste("select count(*) as n_row from", table_name, ";")
 }
+
+#' Remove semicolon
+#'
+#' @param x string or query
+#'
+#' @return string without semicolon
+remove_semicolon <- function(x){
+    stringr::str_replace_all(x, ";", "")
+}
+
+
+#' add limit n in SQL query
+#'
+#' @param query SQL statement
+#' @param n number of observations
+#'
+#' @return query with added limit
+#' @export
+#'
+#' @examples
+#' library(tidyverse)
+#' "select * from schema.table;" %>% add_limit(100)
+add_limit <- function(query, n = 100){
+    query %>%
+        remove_semicolon() %>%
+        paste("limit", n)
+}
