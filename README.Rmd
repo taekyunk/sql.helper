@@ -8,6 +8,8 @@ output:
 
 ```{r, echo = FALSE}
 knitr::opts_chunk$set(
+  message = FALSE, 
+  warning = FALSE,
   collapse = TRUE,
   comment = "#>",
   fig.path = "README-"
